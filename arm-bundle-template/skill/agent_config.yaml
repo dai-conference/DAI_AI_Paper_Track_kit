@@ -1,0 +1,22 @@
+agent:
+  name: "Example Research Agent"
+  version: "v0.1"
+  mode: "human_in_the_loop"
+
+models:
+  - name: "example-model"
+    version: "2026-06"
+    role: "planning and drafting"
+
+tools:
+  - name: "python"
+    version: "3.10+"
+    purpose: "verification script execution"
+  - name: "bash"
+    purpose: "entry point wrapper"
+
+workflow:
+  - step: "propose_template_claim"
+  - step: "create_verification_script"
+  - step: "map_claim_to_artifacts"
+  - step: "human_review"

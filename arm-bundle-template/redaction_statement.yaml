@@ -1,0 +1,13 @@
+# Optional detailed redaction statement.
+# Keep this file if redactions are present and the list is too long for manifest.yaml.
+# If no redactions are present, leave redactions as an empty list.
+redactions: []
+
+# Example:
+# redactions:
+#   - item_id: R1
+#     location: trace/trace.jsonl
+#     item_type: personal_data
+#     reason: "Raw trace includes private participant information."
+#     affects_claims: [C1]
+#     alternative_evidence: "Aggregate output and sanitized trace steps are provided."

@@ -1,0 +1,6 @@
+.DS_Store
+__pycache__/
+*.pyc
+arm-bundle-template/execution/generated_outputs/
+work/
+validation-report/

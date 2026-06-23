@@ -1,0 +1,26 @@
+title: "Example AI Paper Title"
+category: ai_for_ai  # ai_for_ai | ai_for_x
+autonomy_mode: human_in_the_loop  # fully_autonomous | human_in_the_loop
+
+agent_system:
+  name: "Example Research Agent"
+  version: "v0.1"
+  base_models:
+    - "example-model@2026-06"
+  tools:
+    - "python@3.10"
+    - "bash"
+
+contents:
+  trace: present            # present | partial | redacted
+  execution: present        # present | partial | redacted
+  skill: present            # present | partial | redacted
+  knowledge_graph: present  # present | partial | redacted
+
+# R0: full clean rerun; R1: rerun with provided artifacts; R2: partial rerun; R3: inspection only.
+reproducibility_level: R2
+entry_point: "bash execution/run.sh"
+claims_index: "claims_index.yaml"
+
+redactions: []
+redaction_statement: ""  # set to "redaction_statement.yaml" when a separate detailed statement is provided

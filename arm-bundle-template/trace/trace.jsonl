@@ -1,0 +1,4 @@
+{"step_id":"T001","timestamp":"2026-06-01T00:00:00Z","actor":"agent","event_type":"planning","summary":"Proposed a minimal ARM Bundle example for dry-run validation.","artifacts":[]}
+{"step_id":"T002","timestamp":"2026-06-01T00:05:00Z","actor":"human","event_type":"selection","summary":"Selected a small verification task as the template headline result.","artifacts":[]}
+{"step_id":"T003","timestamp":"2026-06-01T00:10:00Z","actor":"agent","event_type":"implementation","summary":"Created a Python script to verify the expected headline result artifact.","artifacts":["execution/src/verify_headline_result.py","execution/expected_outputs/headline_result.json"]}
+{"step_id":"T004","timestamp":"2026-06-01T00:15:00Z","actor":"human","event_type":"validation","summary":"Reviewed the template and confirmed that no sensitive information is included.","artifacts":["manifest.yaml","claims_index.yaml"]}

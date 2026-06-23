@@ -1,0 +1,43 @@
+{
+  "nodes": [
+    {
+      "id": "claim:C1",
+      "type": "claim",
+      "label": "Template headline result is internally consistent",
+      "claim_text": "The template verification script confirms that the provided headline result is internally consistent."
+    },
+    {
+      "id": "artifact:verify_script",
+      "type": "execution_artifact",
+      "path": "execution/src/verify_headline_result.py"
+    },
+    {
+      "id": "artifact:expected_output",
+      "type": "execution_artifact",
+      "path": "execution/expected_outputs/headline_result.json"
+    },
+    {
+      "id": "citation:openreview",
+      "type": "citation",
+      "label": "OpenReview",
+      "url": "https://openreview.net/"
+    }
+  ],
+  "edges": [
+    {
+      "source": "claim:C1",
+      "target": "artifact:verify_script",
+      "type": "supported_by"
+    },
+    {
+      "source": "claim:C1",
+      "target": "artifact:expected_output",
+      "type": "supported_by"
+    },
+    {
+      "source": "claim:C1",
+      "target": "citation:openreview",
+      "type": "contextual_reference"
+    }
+  ]
+}

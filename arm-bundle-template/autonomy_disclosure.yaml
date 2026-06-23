@@ -1,0 +1,132 @@
+submission_title: "Example AI Paper Title"
+research_domain: ai_for_ai  # ai_for_ai | ai_for_x
+autonomy_mode: human_in_the_loop  # fully_autonomous | human_in_the_loop
+reproducibility_level: R2  # R0 | R1 | R2 | R3
+
+primary_ai_contributor:
+  name: "Example Research Agent"
+  version: "v0.1"
+  role: primary_contributor_first_author
+  first_author_confirmed: true
+
+agent_system:
+  name: "Example Research Agent"
+  version: "v0.1"
+  base_models:
+    - "example-model@2026-06"
+  tools:
+    - "python@3.10"
+    - "bash"
+  orchestration: "Replace with the agent workflow or framework summary."
+  memory_or_retrieval: "not_applicable"
+  execution_environment: "Replace with OS, runtime, hardware, container, or service summary."
+
+human_contributors:
+  - name: "Anonymous Human Author"
+    role: corresponding_author
+    contribution_summary: "Replace with advisory, supervisory, validation, compliance, or logistics role."
+    stages:
+      - ideation
+      - experiment_design
+      - analysis
+      - writing
+
+stages:
+  ideation:
+    role_mode: ai_proposed_human_selected
+    ai_actions: "Generated candidate research directions."
+    human_actions: "Selected the final direction."
+    evidence_paths:
+      - "trace/trace.jsonl#step=T001"
+    notes: "Replace with paper-specific evidence."
+
+  literature_review:
+    role_mode: human_directed_ai_executed
+    ai_actions: "Collected and summarized related work."
+    human_actions: "Checked relevance and citation validity."
+    evidence_paths:
+      - "knowledge_graph/graph.json"
+    notes: ""
+
+  hypothesis_generation:
+    role_mode: ai_proposed_human_selected
+    ai_actions: "Proposed the headline claim."
+    human_actions: "Reviewed and accepted the claim for testing."
+    evidence_paths:
+      - "claims_index.yaml#claim=C1"
+    notes: ""
+
+  experiment_design:
+    role_mode: human_directed_ai_executed
+    ai_actions: "Generated the verification design."
+    human_actions: "Specified expected output and checked correctness."
+    evidence_paths:
+      - "execution/src/verify_headline_result.py"
+    notes: ""
+
+  implementation:
+    role_mode: ai_proposed_human_selected
+    ai_actions: "Drafted code."
+    human_actions: "Reviewed code."
+    evidence_paths:
+      - "execution/run.sh"
+    notes: ""
+
+  data_collection:
+    role_mode: not_applicable
+    ai_actions: ""
+    human_actions: ""
+    evidence_paths: []
+    notes: "No data collection in this template."
+
+  analysis:
+    role_mode: human_directed_ai_executed
+    ai_actions: "Ran verification logic."
+    human_actions: "Checked result."
+    evidence_paths:
+      - "execution/expected_outputs/headline_result.json"
+    notes: ""
+
+  writing:
+    role_mode: ai_proposed_human_selected
+    ai_actions: "Drafted explanatory text."
+    human_actions: "Edited and approved final text."
+    evidence_paths:
+      - "trace/trace.jsonl#step=T004"
+    notes: ""
+
+  revision:
+    role_mode: human_performed_ai_assisted
+    ai_actions: "Suggested edits."
+    human_actions: "Made final decisions."
+    evidence_paths: []
+    notes: ""
+
+  self_review_or_rebuttal:
+    role_mode: not_applicable
+    ai_actions: ""
+    human_actions: ""
+    evidence_paths: []
+    notes: "No review response exists before submission."
+
+human_interventions:
+  - intervention_id: H1
+    stage: ideation
+    actor: "Anonymous Human Author"
+    action: "Selected final direction from AI-proposed candidates."
+    affects_claims:
+      - C1
+    evidence_paths:
+      - "trace/trace.jsonl#step=T001"
+
+validation_and_integrity:
+  citation_check: "Replace with how citations were verified."
+  claim_check: "Replace with how headline claims were checked against evidence."
+  data_check: "Replace with data provenance, consent, privacy, and licensing checks."
+  code_check: "Replace with code review or execution checks."
+  originality_check: "Replace with plagiarism, overlap, or prior-publication checks."
+  license_check: "Replace with third-party material checks."
+
+redaction_summary:
+  redactions_present: false
+  redaction_statement: "not_applicable"

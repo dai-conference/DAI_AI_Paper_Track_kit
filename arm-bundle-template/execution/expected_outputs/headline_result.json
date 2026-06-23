@@ -1,0 +1,5 @@
+{
+  "claim_id": "C1",
+  "status": "consistent",
+  "description": "Template headline result used for ARM Bundle dry-run validation."
+}
