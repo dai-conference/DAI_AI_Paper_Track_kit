@@ -5,9 +5,7 @@ reproducibility_level: R2  # R0 | R1 | R2 | R3
 
 primary_ai_contributor:
   name: "Example Research Agent"
-  version: "v0.1"
-  role: primary_contributor_first_author
-  first_author_confirmed: true
+  contribution_summary: "Replace with one sentence describing the AI system's primary research contribution."
 
 agent_system:
   name: "Example Research Agent"

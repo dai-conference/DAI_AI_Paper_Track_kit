@@ -365,31 +365,23 @@ def check_autonomy_disclosure(root: Path, manifest: dict[str, Any] | None, repor
         report.add("fail", "primary_ai_contributor_not_object", "primary_ai_contributor must be an object", "autonomy_disclosure.yaml")
     else:
         name = str(primary.get("name") or "").strip()
-        role = str(primary.get("role") or "").strip()
-        role_lower = role.lower()
-        first_author = primary.get("first_author_confirmed")
+        contribution_summary = str(primary.get("contribution_summary") or "").strip()
         if not name:
             report.add("fail", "primary_ai_contributor_missing_name", "Primary AI contributor name is required", "autonomy_disclosure.yaml")
-        if role != "primary_contributor_first_author":
+        if not contribution_summary:
             report.add(
                 "fail",
-                "primary_ai_contributor_not_first_author_role",
-                "Primary AI contributor role must be primary_contributor_first_author for a ready AI Paper Track submission",
+                "primary_ai_contribution_summary_missing",
+                "primary_ai_contributor.contribution_summary must briefly state the AI system's primary research contribution",
                 "autonomy_disclosure.yaml",
             )
-        support_markers = sorted(marker for marker in SUPPORT_ONLY_AI_ROLE_MARKERS if marker in role_lower)
+        primary_text = json.dumps(primary, ensure_ascii=False).lower()
+        support_markers = sorted(marker for marker in SUPPORT_ONLY_AI_ROLE_MARKERS if marker in primary_text)
         if support_markers:
             report.add(
                 "fail",
                 "support_agent_used_as_primary_ai_contributor",
                 f"Support role marker(s) {', '.join(support_markers)} cannot be used as the primary AI contributor for a ready packet",
-                "autonomy_disclosure.yaml",
-            )
-        if first_author is not True:
-            report.add(
-                "fail",
-                "ai_first_author_not_confirmed",
-                "primary_ai_contributor.first_author_confirmed must be true for a ready AI Paper Track submission",
                 "autonomy_disclosure.yaml",
             )
 

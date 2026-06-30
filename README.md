@@ -1,4 +1,4 @@
-# DAI 2026 AI Paper Track Author Kit v1
+# DAI 2026 AI Paper Track Author Kit v0.1
 
 This official kit helps authors and AI assistants prepare the two files required for OpenReview:
 
@@ -24,7 +24,7 @@ Give your AI assistant:
 - your draft `paper.pdf`,
 - the project/code/data/artifact folders that support the paper,
 - any agent traces, prompts, logs, configs, or experiment outputs,
-- the intended title, abstract, keywords, AI contributor name, and OpenReview contact metadata,
+- the intended title, abstract, keywords, AI contributor name, and human OpenReview contact metadata,
 - any privacy, safety, legal, license, or redaction constraints.
 
 Then ask the assistant to read `author-assistant-prompt.md` and prepare the final `submission-packet/`.
@@ -43,7 +43,9 @@ submission-packet/
 
 Use `arm-bundle-template/` as the starting structure. Replace all example content with paper-specific evidence. Do not fabricate missing traces, logs, citations, experiments, results, model versions, tool versions, or human approvals.
 
-This track is for AI-led research. The declared primary AI contributor must be the intended sole first author and primary research contributor. If the available evidence only shows an AI packaging assistant, proofreading assistant, or retrospective bundle-preparation assistant, mark the packet as not ready instead of trying to make it appear compliant.
+This track is for AI-led research. The declared primary AI contributor must be the primary research contributor and may be identified in the manuscript/PDF as the paper-level AI contributor or first author when accurate. OpenReview author fields must list human OpenReview profile holders only. Do not create or list an AI agent/system account as an OpenReview author. If the available evidence only shows an AI packaging assistant, proofreading assistant, or retrospective bundle-preparation assistant, mark the packet as not ready instead of trying to make it appear compliant.
+
+In `autonomy_disclosure.yaml`, `primary_ai_contributor` only needs the AI system name and a short contribution summary. Detailed model versions, tools, and workflow details belong in the separate `agent_system` section.
 
 The final `arm-bundle.zip` must contain this root structure:
 
@@ -121,7 +123,7 @@ If the entry point is unsafe, expensive, private, or requires unavailable resour
 - `warning` / exit code `1`: review and explain warnings before submission.
 - `fail` / exit code `2`: fix failures before submission unless the PC explicitly allows an exception.
 
-The validator will fail a packet that still looks like the unmodified template, contains `.git` metadata, declares only a packaging/proofreading AI assistant, or does not confirm the declared AI system as the intended sole first author and primary research contributor.
+The validator will fail a packet that still looks like the unmodified template, contains `.git` metadata, declares only a packaging/proofreading AI assistant, or does not identify the declared AI system as the primary research contributor.
 
 Use `--allow-template-placeholders` only to self-test the starter template. Do not use it for real submissions.
 

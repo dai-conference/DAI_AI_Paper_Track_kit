@@ -1,1 +1,1 @@
-944762c3ae009f82fa61cbe6a224e6fad806bd3e26b07bf9a35e39fcebfa3cf5  dai-2026-ai-paper-track-author-kit-v1.zip
+dcfa0d662f83287e1dd6667e5a75fce595b81fea7ac8847eb652d83a804e4fc6  dist/dai-2026-ai-paper-track-author-kit-v1.zip
